@@ -3,6 +3,50 @@ body {
 	background-color: #f3f3f3;
 }
 
-.mensagens {
+.main {
+	display: flex;
+}
+
+.messages {
+	width: 100%;
 	margin-top: 100px;
+	margin-bottom: 100px;
+	height: 100%;
+}
+
+.messages .message {
+	width: 95%;
+	/* background-color: red; */
+	padding: 10px;
+	margin-bottom: 4px;
+}
+
+.messages .message.message-status {
+	background-color: #dcdcdc;
+}
+
+.messages .message.message-all {
+	background-color: #ffffff;
+}
+
+.messages .message.message-reserv {
+	background-color: #ffdede;
+}
+
+.messages .message .message-content {
+	width: 100%;
+	font-size: 14px;
+}
+
+.messages .message .message-content .message-time {
+	color: #aaaaaa;
+	font-weight: 400;
+}
+
+.messages .message .message-content .message-from {
+	font-weight: 700;
+}
+
+.messages .message .message-content .message-to {
+	font-weight: 700;
 }
