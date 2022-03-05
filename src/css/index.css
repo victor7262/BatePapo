@@ -1,8 +1,8 @@
 body {
 	font-family: "Roboto", sans-serif;
+	background-color: #f3f3f3;
 }
 
-.main {
-	background-color: yellow;
-	display: none;
+.mensagens {
+	margin-top: 100px;
 }

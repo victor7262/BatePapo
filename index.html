@@ -9,12 +9,14 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,100;1,400&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,100;1,400&display=swap"
 			rel="stylesheet"
 		/>
 
 		<link rel="stylesheet" href="./src/css/reset.css" />
 		<link rel="stylesheet" href="./src/css/index.css" />
+		<link rel="stylesheet" href="./src/css/topbar.css" />
+		<link rel="stylesheet" href="./src/css/bottombar.css" />
 		<link rel="stylesheet" href="./src/css/tela-entrada.css" />
 	</head>
 	<body>
@@ -23,16 +25,137 @@
 			<div class="entrar">
 				<input
 					type="text"
-					id="nome"
-					name="nome"
+					id="Nome"
+					name="Nome"
 					placeholder="Digite seu nome"
 				/>
-				<label id="NomeEmUso" for="nome">Esse nome está em uso</label>
-				<button onclick="entrar()">Entrar</button>
+				<p id="NomeEmUso" for="Nome">Esse nome está em uso</p>
+				<p id="InformarNome" for="Nome">Informe um nome para entrar</p>
+				<button onclick="entrar(nome)">Entrar</button>
 			</div>
 		</div>
-		<div class="main">asd</div>
+		<div class="main">
+			<div class="topbar">
+				<div class="topbar-content">
+					<img src="./src/img/batepapo_uol.jpg" />
+					<ion-icon name="people"></ion-icon>
+				</div>
+			</div>
+			<div class="mensagens">
+				<!-- Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt, quae
+				est. Recusandae saepe veniam quia rerum magnam pariatur eaque
+				perferendis quasi eveniet, exercitationem necessitatibus ab alias ut
+				sapiente optio. Ad. Lorem ipsum dolor, sit amet consectetur adipisicing
+				elit. Consequatur ullam qui, a aliquam inventore laboriosam quas
+				molestias mollitia odit rem obcaecati, illo exercitationem, accusamus
+				odio debitis at perferendis assumenda quae! Lorem ipsum dolor sit amet
+				consectetur adipisicing elit. Asperiores adipisci voluptatem, suscipit
+				totam explicabo alias officiis. Distinctio quas ipsam esse vero
+				deleniti, voluptatibus quisquam temporibus dolorem quia tenetur fugit
+				itaque. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+				Deserunt, quae est. Recusandae saepe veniam quia rerum magnam pariatur
+				eaque perferendis quasi eveniet, exercitationem necessitatibus ab alias
+				ut sapiente optio. Ad. Lorem ipsum dolor, sit amet consectetur
+				adipisicing elit. Consequatur ullam qui, a aliquam inventore laboriosam
+				quas molestias mollitia odit rem obcaecati, illo exercitationem,
+				accusamus odio debitis at perferendis assumenda quae! Lorem ipsum dolor
+				sit amet consectetur adipisicing elit. Asperiores adipisci voluptatem,
+				suscipit totam explicabo alias officiis. Distinctio quas ipsam esse vero
+				deleniti, voluptatibus quisquam temporibus dolorem quia tenetur fugit
+				itaque. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+				Deserunt, quae est. Recusandae saepe veniam quia rerum magnam pariatur
+				eaque perferendis quasi eveniet, exercitationem necessitatibus ab alias
+				ut sapiente optio. Ad. Lorem ipsum dolor, sit amet consectetur
+				adipisicing elit. Consequatur ullam qui, a aliquam inventore laboriosam
+				quas molestias mollitia odit rem obcaecati, illo exercitationem,
+				accusamus odio debitis at perferendis assumenda quae! Lorem ipsum dolor
+				sit amet consectetur adipisicing elit. Asperiores adipisci voluptatem,
+				suscipit totam explicabo alias officiis. Distinctio quas ipsam esse vero
+				deleniti, voluptatibus quisquam temporibus dolorem quia tenetur fugit
+				itaque. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+				Deserunt, quae est. Recusandae saepe veniam quia rerum magnam pariatur
+				eaque perferendis quasi eveniet, exercitationem necessitatibus ab alias
+				ut sapiente optio. Ad. Lorem ipsum dolor, sit amet consectetur
+				adipisicing elit. Consequatur ullam qui, a aliquam inventore laboriosam
+				quas molestias mollitia odit rem obcaecati, illo exercitationem,
+				accusamus odio debitis at perferendis assumenda quae! Lorem ipsum dolor
+				sit amet consectetur adipisicing elit. Asperiores adipisci voluptatem,
+				suscipit totam explicabo alias officiis. Distinctio quas ipsam esse vero
+				deleniti, voluptatibus quisquam temporibus dolorem quia tenetur fugit
+				itaque. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+				Deserunt, quae est. Recusandae saepe veniam quia rerum magnam pariatur
+				eaque perferendis quasi eveniet, exercitationem necessitatibus ab alias
+				ut sapiente optio. Ad. Lorem ipsum dolor, sit amet consectetur
+				adipisicing elit. Consequatur ullam qui, a aliquam inventore laboriosam
+				quas molestias mollitia odit rem obcaecati, illo exercitationem,
+				accusamus odio debitis at perferendis assumenda quae! Lorem ipsum dolor
+				sit amet consectetur adipisicing elit. Asperiores adipisci voluptatem,
+				suscipit totam explicabo alias officiis. Distinctio quas ipsam esse vero
+				deleniti, voluptatibus quisquam temporibus dolorem quia tenetur fugit
+				itaque. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+				Deserunt, quae est. Recusandae saepe veniam quia rerum magnam pariatur
+				eaque perferendis quasi eveniet, exercitationem necessitatibus ab alias
+				ut sapiente optio. Ad. Lorem ipsum dolor, sit amet consectetur
+				adipisicing elit. Consequatur ullam qui, a aliquam inventore laboriosam
+				quas molestias mollitia odit rem obcaecati, illo exercitationem,
+				accusamus odio debitis at perferendis assumenda quae! Lorem ipsum dolor
+				sit amet consectetur adipisicing elit. Asperiores adipisci voluptatem,
+				suscipit totam explicabo alias officiis. Distinctio quas ipsam esse vero
+				deleniti, voluptatibus quisquam temporibus dolorem quia tenetur fugit
+				itaque. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+				Deserunt, quae est. Recusandae saepe veniam quia rerum magnam pariatur
+				eaque perferendis quasi eveniet, exercitationem necessitatibus ab alias
+				ut sapiente optio. Ad. Lorem ipsum dolor, sit amet consectetur
+				adipisicing elit. Consequatur ullam qui, a aliquam inventore laboriosam
+				quas molestias mollitia odit rem obcaecati, illo exercitationem,
+				accusamus odio debitis at perferendis assumenda quae! Lorem ipsum dolor
+				sit amet consectetur adipisicing elit. Asperiores adipisci voluptatem,
+				suscipit totam explicabo alias officiis. Distinctio quas ipsam esse vero
+				deleniti, voluptatibus quisquam temporibus dolorem quia tenetur fugit
+				itaque. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+				Deserunt, quae est. Recusandae saepe veniam quia rerum magnam pariatur
+				eaque perferendis quasi eveniet, exercitationem necessitatibus ab alias
+				ut sapiente optio. Ad. Lorem ipsum dolor, sit amet consectetur
+				adipisicing elit. Consequatur ullam qui, a aliquam inventore laboriosam
+				quas molestias mollitia odit rem obcaecati, illo exercitationem,
+				accusamus odio debitis at perferendis assumenda quae! Lorem ipsum dolor
+				sit amet consectetur adipisicing elit. Asperiores adipisci voluptatem,
+				suscipit totam explicabo alias officiis. Distinctio quas ipsam esse vero
+				deleniti, voluptatibus quisquam temporibus dolorem quia tenetur fugit
+				itaque. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+				Deserunt, quae est. Recusandae saepe veniam quia rerum magnam pariatur
+				eaque perferendis quasi eveniet, exercitationem necessitatibus ab alias
+				ut sapiente optio. Ad. Lorem ipsum dolor, sit amet consectetur
+				adipisicing elit. Consequatur ullam qui, a aliquam inventore laboriosam
+				quas molestias mollitia odit rem obcaecati, illo exercitationem,
+				accusamus odio debitis at perferendis assumenda quae! Lorem ipsum dolor
+				sit amet consectetur adipisicing elit. Asperiores adipisci voluptatem,
+				suscipit totam explicabo alias officiis. Distinctio quas ipsam esse vero
+				deleniti, voluptatibus quisquam temporibus dolorem quia tenetur fugit
+				itaque. -->
+			</div>
+			<div class="bottombar">
+				<div class="bottombar-content">
+					<div class="text-mensagem">
+						<input
+							id="NovaMensagem"
+							name="NovaMensagem"
+							type="text"
+							placeholder="Escreva aqui..."
+						/>
+						<p id="MensagemReservada">Enviando para Maria (reservadamente)</p>
+					</div>
+					<div class="enviar-mensagem">
+						<ion-icon
+							onclick="enviarMensagem(NovaMensagem)"
+							name="paper-plane-outline"
+						></ion-icon>
+					</div>
+				</div>
+			</div>
+		</div>
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 		<script src="./src/script/index.js"></script>
 	</body>
 </html>

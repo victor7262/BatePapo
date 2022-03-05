@@ -1,0 +1,60 @@
+.bottombar {
+	width: 100%;
+	height: 80px;
+	background-color: #ffffff;
+	position: fixed;
+	bottom: 0px;
+}
+
+.bottombar .bottombar-content {
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 22px;
+}
+
+.bottombar .bottombar-content .text-mensagem {
+	width: 100%;
+}
+
+.bottombar .bottombar-content .text-mensagem input {
+	width: 95%;
+	height: 30px;
+
+	font-family: Roboto;
+	font-weight: 400;
+	font-style: italic;
+	font-size: 18px;
+	line-height: 21px;
+	display: flex;
+	align-items: center;
+
+	color: #000000;
+
+	border: 0px;
+	outline: none;
+}
+
+.bottombar .bottombar-content .text-mensagem p {
+	display: none;
+	width: 100%;
+	height: 30px;
+
+	font-family: Roboto;
+	font-weight: 300;
+	font-size: 14x;
+	display: flex;
+	align-items: center;
+
+	color: #696969;
+}
+
+.bottombar .bottombar-content .enviar-mensagem {
+	width: 40px;
+}
+
+.bottombar .bottombar-content .enviar-mensagem ion-icon {
+	font-size: 26px;
+	margin: 0;
+}
