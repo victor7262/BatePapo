@@ -31,13 +31,13 @@
 				/>
 				<p id="NomeEmUso" for="Nome">Esse nome está em uso</p>
 				<p id="InformarNome" for="Nome">Informe um nome para entrar</p>
-				<button onclick="entrar(nome)">Entrar</button>
+				<button onclick="Entrar(Nome)">Entrar</button>
 			</div>
 		</div>
 		<div class="main">
 			<div class="topbar">
 				<div class="topbar-content">
-					<img src="./src/img/batepapo_uol.jpg" />
+					<img onclick="Sair()" src="./src/img/batepapo_uol.jpg" />
 					<ion-icon name="people"></ion-icon>
 				</div>
 			</div>
@@ -106,11 +106,11 @@
 							type="text"
 							placeholder="Escreva aqui..."
 						/>
-						<p id="MensagemReservada">Enviando para Maria (reservadamente)</p>
+						<p id="MensagemReservada"></p>
 					</div>
 					<div class="enviar-mensagem">
 						<ion-icon
-							onclick="enviarMensagem(NovaMensagem)"
+							onclick="EnviarMensagem(NovaMensagem)"
 							name="paper-plane-outline"
 						></ion-icon>
 					</div>
