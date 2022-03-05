@@ -1,10 +1,18 @@
 const url = "https://mock-api.bootcamp.respondeai.com.br/api/v3/uol/";
 
 let usuario = new Object();
+let mensagemPara = "Todos";
+let mensagemPrivada = false;
 let manterLogadoInterval;
 let buscarMensagensInterval;
 let horaUltimaMensagem = null;
 let contadorMensagens = 0;
+
+const inputEnter = document.getElementById("NovaMensagem");
+inputEnter.addEventListener("keyup", function (e) {
+	var key = e.which || e.keyCode;
+	if (key == 13) EnviarMensagem(this);
+});
 
 function Entrar(nome) {
 	document.querySelector("#NomeEmUso").style.display = "none";
@@ -49,6 +57,8 @@ function Sair() {
 	clearInterval(manterLogadoInterval);
 	clearInterval(buscarMensagensInterval);
 
+	mensagemPara = "Todos";
+	mensagemPrivada = false;
 	horaUltimaMensagem = null;
 	contadorMensagens = 0;
 	usuario = new Object();
@@ -65,6 +75,9 @@ function buscarMensagem() {
 }
 
 function buscarMensagemSucesso(res) {
+	// console.log("buscar");
+	// console.log(horaUltimaMensagem);
+	// console.log(res);
 	if (horaUltimaMensagem == null) {
 		for (let index = res.data.length - 1; index >= 0; index--) {
 			const mensagem = res.data[index];
@@ -82,8 +95,35 @@ function buscarMensagemSucesso(res) {
 	}
 }
 
+function contornarDadosDeTesteDoServidor(mensagem) {
+	let dtAux = new Date(new Date().getTime() + 5 * 60000 - 9 * 60 * 60000);
+	let timeAux = "";
+
+	if (dtAux.getHours() < 10) timeAux += "0" + dtAux.getHours().toString();
+	else timeAux += dtAux.getHours();
+
+	timeAux += ":";
+
+	if (dtAux.getMinutes() < 10) timeAux += "0" + dtAux.getMinutes().toString();
+	else timeAux += dtAux.getMinutes();
+
+	timeAux += ":";
+
+	if (dtAux.getSeconds() < 10) timeAux += "0" + dtAux.getSeconds().toString();
+	else timeAux += dtAux.getSeconds();
+
+	return horaUltimaMensagem != null && mensagem.time > timeAux;
+}
+
 function adicionarMensagemNaTela(mensagem) {
-	//console.log(mensagem);
+	console.log(mensagem);
+
+	if (contornarDadosDeTesteDoServidor(mensagem)) {
+		//servidor com mensagem antiga está atrapalhando a aplicação
+		//só pega mensagem nova se ela tiver no máximo 5 minutos de diferença da última
+		return;
+	}
+
 	horaUltimaMensagem = mensagem.time;
 	contadorMensagens++;
 
@@ -133,4 +173,18 @@ function adicionarMensagemNaTela(mensagem) {
 	document.querySelector("#msg" + contadorMensagens).scrollIntoView();
 }
 
-function EnviarMensagem(NovaMensagem) {}
+function EnviarMensagem(msg) {
+	var novaMensagem = new Object();
+	novaMensagem.from = usuario.name;
+	novaMensagem.to = mensagemPara;
+	novaMensagem.text = msg.value;
+
+	if (mensagemPrivada) novaMensagem.type = "private_message";
+	else novaMensagem.type = "message";
+
+	msg.value = "";
+
+	const pEnviarMensagem = axios.post(url + "messages", novaMensagem);
+	pEnviarMensagem.then(buscarMensagem);
+	pEnviarMensagem.catch(Sair);
+}
